@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year, My Wify! - From Yuvraj</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .quote {
+            font-size: 1.5em;
+            margin: 20px 0;
+            font-style: italic;
+            animation: slideIn 3s ease-in-out;
+        }
+        .button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            margin-top: 30px;
+        }
+        .button:hover {
+            background-color: #ff5252;
+        }
+        .gallery {
+            display: none;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: zoomIn 1s ease-in-out;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            color: #ff6b6b;
+            font-size: 2em;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <h1>Happy New Year, My Wify!</h1>
+        <p>From Yuvraj with all my love 💖</p>
+        <div class="quote">
+            "Bubu Happy new year shona💖, love you soo much....bhut sara .Dudu aapse bhut sara pyar karta hai, aur aane wala har saal bubu-dudu hmesha sath rahe, Dudu apko hmesha khush rakhne ki koshis karega, aapko hmesha bhut sara pyar karega, aur dudu apko bhut miss karta hai apke bina bilkul vi nhi rahh sakta.......miss you bubu." – Aapka Dudu[non]
+        </div>
+        <div class="quote">
+            "You are my today and all of my tomorrows."
+            "Bubu aap mere ho aur hmesha mere rahoge"
+        </div>
+        <button class="button" onclick="showGallery()">BUBU CLICK HERE</button>
+        <div class="gallery" id="gallery">
+            <!-- Replace these with your actual image URLs or paths -->
+            <img src="BUBU-DUDU.jpg" alt="Our First Date">
+            <img src="yuvi shalini.png" alt="TOGETHER">
+            <img src="BUBUsnap.jpg" alt="VEDIO CALL">
+            <img src="SNAP2.jpg" alt="VEDIO CALL">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <script>
+        // Function to show the gallery
+        function showGallery() {
+            const gallery = document.getElementById('gallery');
+            gallery.style.display = 'block';
+        }
+
+        // Create falling hearts animation
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // Initialize animations
+        window.onload = function() {
+            createHearts();
+        };
+    </script>
+</body>
+</html>
